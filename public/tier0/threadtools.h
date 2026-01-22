@@ -1182,7 +1182,7 @@ public:
 private:
 	void WaitForRead();
 
-	CAtomicMutex m_Mutex;
+	CAtomicMutex m_mutex;
 	CThreadEvent m_CanWrite;
 	CThreadEvent m_CanRead;
 

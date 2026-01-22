@@ -44,7 +44,7 @@ public:
 protected:
 	typedef CUtlRBTree<const char *, unsigned short> CStrSet;
 
-	CThreadFastMutex m_Mutex;
+	CAtomicMutex m_Mutex;
 	CStrSet m_Strings;
 };
 

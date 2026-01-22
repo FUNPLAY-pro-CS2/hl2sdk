@@ -88,7 +88,7 @@ struct FileHandleTracker_t
 	int m_nFileNumber;
 	PackDataFileHandle_t m_hFileHandle;
 	int m_nCurOfs;
-	CThreadFastMutex m_Mutex;
+	CAtomicMutex m_Mutex;
 
 	FileHandleTracker_t( void )
 	{
@@ -161,7 +161,7 @@ private:
 
 	FileHandle_t m_ChunkWriteHandle;
 	IBaseFileSystem *m_pFileSystem;
-	CThreadFastMutex m_Mutex;
+	CAtomicMutex m_Mutex;
 	
 
 	CUtlIntrusiveList<class CFileExtensionData> m_pExtensionData[PACKEDFILE_EXT_HASH_SIZE];

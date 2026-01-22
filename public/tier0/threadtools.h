@@ -816,6 +816,23 @@ private:
 	int					m_depth;
 };
 
+class CAtomicMutex
+{
+private:
+	char m_pad0[16];
+
+public:
+	void Lock(const char* pFileName = NULL, int nLine = -1, unsigned int nSpinSleepTime = 0) volatile
+	{
+
+	}
+
+	void Unlock(const char* pFileName = NULL, int nLine = -1) volatile
+	{
+
+	}
+};
+
 class ALIGN128 CAlignedThreadFastMutex : public CThreadSpinMutex
 {
 public:
@@ -1165,7 +1182,7 @@ public:
 private:
 	void WaitForRead();
 
-	CThreadFastMutex m_mutex;
+	CAtomicMutex m_Mutex;
 	CThreadEvent m_CanWrite;
 	CThreadEvent m_CanRead;
 

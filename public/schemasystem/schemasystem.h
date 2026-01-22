@@ -182,7 +182,7 @@ class CSchemaSystem : public ISchemaSystem
 public:
 	CUtlVector<ResourceManifestDesc_t*> m_ResourceManifestDescs;
 	int m_nNumConnections;
-	CThreadFastMutex m_Mutex;
+	CAtomicMutex m_Mutex;
 
 	CConCommandMemberAccessor<CSchemaSystem> m_SchemaListBindings;
 	CConCommandMemberAccessor<CSchemaSystem> m_SchemaAllListBindings;

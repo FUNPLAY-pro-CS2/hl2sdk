@@ -59,7 +59,7 @@ private:
 	int m_iy;
 	int m_iv[NTAB];
 
-	CThreadFastMutex m_mutex;
+	CAtomicMutex m_Mutex;
 };
 
 
@@ -84,7 +84,7 @@ private:
 	bool	m_bHaveValue;
 	float	m_flRandomValue;
 
-	CThreadFastMutex m_mutex;
+	CAtomicMutex m_Mutex;
 };
 
 

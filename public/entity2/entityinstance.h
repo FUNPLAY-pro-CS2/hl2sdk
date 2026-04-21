@@ -11,6 +11,7 @@
 #include "schemasystem/schematypes.h"
 #include <initializer_list>
 
+class CNetworkSerializerClassInfo;
 class CEntityKeyValues;
 class CFieldPath;
 class ISave;
@@ -67,6 +68,8 @@ struct NetworkStateChangedData
 class CEntityInstance
 {
 public:
+	virtual CNetworkSerializerClassInfo* GetNetworkSerializerInfo() = 0;
+
 	virtual void unk001() = 0;
 	virtual void unk002() = 0;
 
@@ -154,16 +157,13 @@ public:
 	}
 
 public:
-	CUtlSymbolLarge m_iszPrivateVScripts; // 0x8
-	CEntityIdentity* m_pEntity; // 0x10
+	CUtlSymbolLarge m_iszPrivateVScripts;
+	CEntityIdentity* m_pEntity;
 private:
-	void* m_hPrivateScope; // 0x18 - CEntityPrivateScriptScope
+	void* m_hPrivateScope; // CEntityPrivateScriptScope
 public:
-	CEntityKeyValues* m_pKeyValues; // 0x20
-private:
-	uint8 pad[8];
-public:
-	CScriptComponent* m_CScriptComponent; // 0x30
+	CEntityKeyValues* m_pKeyValues;
+	CScriptComponent* m_CScriptComponent;
 };
 
 // -------------------------------------------------------------------------------------------------- //

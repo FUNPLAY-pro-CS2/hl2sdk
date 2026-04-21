@@ -192,6 +192,7 @@ public:
 	virtual void		DumpNetStats( void *, void * ) = 0;
 
 	virtual void		unk201() = 0;
+	virtual void		unk202() = 0;
 
 	// Tell engine to change level ( "changelevel s1\n" or "changelevel2 s1 s2\n" )
 	virtual void		ChangeLevel( const char *s1, const char *s2 ) = 0;
@@ -511,6 +512,8 @@ public:
 	virtual void			ResetChangeAccessorsSerialNumbersToZero() = 0;
 	
 	virtual bool			GetWorldspaceCenter( CEntityIndex nEntityIndex, Vector *pCenter ) const = 0;
+
+	virtual void			OnPrePackEntities( CUtlVector<Entity2Networkable_t *> ents ) const = 0;
 };
 
 #define INTERFACEVERSION_SERVERCONFIG			"Source2ServerConfig001"

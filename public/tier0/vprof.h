@@ -41,7 +41,9 @@
 #endif
 
 // enable this to get detailed nodes beneath budget
-// #define VPROF_LEVEL 1
+// #pragma once
+#undef VPROF_LEVEL
+#define VPROF_LEVEL 1
 
 // enable this to use pix (360 only)
 // #define VPROF_PIX 1

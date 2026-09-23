@@ -120,6 +120,8 @@ public:
 	virtual void	SynchronouslySpawnGroup( SpawnGroupHandle_t ) = 0;
 
 	virtual void	SetServerState( server_state_t eNewState ) = 0;
+	// Added in the 2026-09-23 update, pushes SpawnServer and everything after it one slot down.
+	virtual void	unk101() = 0;
 	virtual void	SpawnServer( const char * ) = 0;
 
 	virtual int 	GetSpawnGroupLoadingStatus( SpawnGroupHandle_t ) = 0;
